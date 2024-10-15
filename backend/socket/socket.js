@@ -1,8 +1,12 @@
 import { Server } from "socket.io";
 import http from "http";
 import express from "express";
+import mongoose from "mongoose";
+
 
 const app = express();
+
+mongoose.set('strictQuery', true);
 
 const server = http.createServer(app);
 const io = new Server(server, {
